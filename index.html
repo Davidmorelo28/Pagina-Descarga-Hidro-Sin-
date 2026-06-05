@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hidro Sinú - Descarga</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue-dark:  #003F7F;
+      --blue-main:  #0066CC;
+      --blue-mid:   #1A85E0;
+      --blue-light: #4DA6FF;
+      --blue-pale:  #E6F2FF;
+      --white:      #FFFFFF;
+      --black:      #0A0A0A;
+      --gray:       #F4F7FB;
+      --text-muted: #5A6A7E;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--blue-dark);
+      padding: 0 2rem;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 3px solid var(--blue-light);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .brand img {
+      height: 44px;
+      width: 44px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .brand-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.5px;
+    }
+
+    .brand-name span {
+      color: var(--blue-light);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, var(--blue-dark) 0%, var(--blue-main) 60%, var(--blue-mid) 100%);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      background: var(--gray);
+      padding: 4rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue-main);
+    }
+
+    /* ── DOWNLOAD CARD ── */
+    .card {
+      background: var(--white);
+      border-radius: 20px;
+      border: 1.5px solid #D0E4F7;
+      padding: 2.5rem 2rem;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 40px rgba(0,102,204,0.10);
+    }
+
+    .app-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      object-fit: cover;
+      margin: 0 auto 1.2rem;
+      display: block;
+      border: 2px solid var(--blue-pale);
+    }
+
+    .app-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--blue-dark);
+      margin-bottom: 0.3rem;
+    }
+
+    .app-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.8rem;
+    }
+
+    .app-meta span {
+      display: inline-block;
+      background: var(--blue-pale);
+      color: var(--blue-main);
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin: 2px;
+      font-size: 0.78rem;
+    }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--blue-main);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      width: 100%;
+    }
+
+    .btn-download:hover {
+      background: var(--blue-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-download svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .disclaimer {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+    }
+
+    /* ── INFO BLOCKS ── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      max-width: 420px;
+      width: 100%;
+    }
+
+    .info-block {
+      background: var(--white);
+      border: 1.5px solid #D0E4F7;
+      border-radius: 14px;
+      padding: 1.2rem 1rem;
+      text-align: center;
+    }
+
+    .info-block .icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .info-block strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 0.2rem;
+    }
+
+    .info-block p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--blue-dark);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+    }
+
+    footer strong {
+      color: var(--white);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a class="brand" href="#">
+      <img src="Hidro_Sinu_Icono.png" alt="Logo Hidro Sinú"/>
+      <span class="brand-name">Hidro <span>Sinú</span></span>
+    </a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Descarga la app oficial<br>de Hidro Sinú</h1>
+    <p>Disponible para dispositivos Android. Instala la aplicación directamente desde esta página de forma segura y gratuita.</p>
+  </section>
+
+  <!-- MAIN -->
+  <main>
+    <p class="section-label">Descarga disponible</p>
+
+    <!-- CARD -->
+    <div class="card">
+      <img src="Hidro_Sinu_Icono.png" alt="Icono Hidro Sinú" class="app-icon"/>
+      <p class="app-name">Hidro Sinú</p>
+      <p class="app-meta">
+        <span>Android</span>
+        <span>APK</span>
+        <span>Gratis</span>
+      </p>
+      <a class="btn-download" href="Hidro%20Sinú.apk" download="HidroSinu.apk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3v13M7 11l5 5 5-5"/><line x1="4" y1="20" x2="20" y2="20"/>
+        </svg>
+        Descargar APK
+      </a>
+      <p class="disclaimer">⚠️ Permite la instalación de fuentes desconocidas en tu dispositivo Android antes de instalar.</p>
+    </div>
+
+    <!-- INFO BLOCKS -->
+    <div class="info-grid">
+      <div class="info-block">
+        <div class="icon">📱</div>
+        <strong>Compatible</strong>
+        <p>Android 5.0 o superior</p>
+      </div>
+      <div class="info-block">
+        <div class="icon">🔒</div>
+        <strong>Seguro</strong>
+        <p>Archivo verificado</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <strong>Hidro Sinú</strong> &nbsp;·&nbsp; Página de descarga oficial &nbsp;·&nbsp; 2025
+  </footer>
+
+</body>
+</html>
